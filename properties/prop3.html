@@ -1,0 +1,165 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+        <!-- HTML encoding meta tag -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Title of website -->
+        <title>Property 3</title>
+        
+        <!-- Linking Bootstrap CSS file -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <!-- CSS File -->
+        <link rel="stylesheet" href="../css/styles.css">	
+        <!-- Linking the Jquery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Local JS files -->
+        <script src="../searchFilter.js"></script>
+        <script src="../favouriteFilter.js"></script>
+        <!-- Importing and linking local Jquery UI files -->
+        <script src="../jquery-ui.js"></script>
+        <link href="../jquery-ui.css" rel="stylesheet">
+        <link href="../jquery-ui.theme.css" rel="stylesheet">
+        <!-- Linking Fonts from Google -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        
+        <!-- Importing Bootstrap script files to be used for the property image carousel -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+        <!-- Script tag with function for Jquery UI tabs -->
+        <script>
+            $( function() {
+              $( "#tabs" ).tabs();
+            } );
+        </script>
+    </head>
+
+    <body>
+        <!-- Navigation Bar -->
+        <header class="nav-bar">
+            <div class="logo">
+                <h2>settle.</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../home-page.html">Home</a></li>
+                    <li><a class="current" href="../properties.html">Properties</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                    
+                </ul>
+            </nav>
+        </header>
+        <!-- Div tag containing the property details and image carousel -->
+        <div class="propertys">
+            <div class='desc'> 
+                <h1>Property Description</h1>
+
+                <div class='prop-page-desc'>
+                    <!-- Property Price -->
+                    <h2>
+                        Price: £700,000
+                    </h2>
+                    <!-- Property type -->
+                    <h2>
+                        Property type: House
+                    </h2>
+                    <!-- Property beds -->
+                    <h2>
+                        Bedrooms: 3
+                    </h2>
+                    <!-- Property Location -->
+                    <h2>
+                        Location: Combedale Road, Greenwich, London, SE10
+                    </h2>
+                </div>
+                <!-- Property Description -->
+                <p>
+                    Beautifully maintained and appointed by the current owners, the property offers superb, spacious accommodation with heaps of period elegance complimented by stylish interiors and high-quality finish. Accommodation comprises, entrance on the ground floor into a hallway with stairs rising to the first floor, and descending to the lower level. The lower ground floor offers a superb flowing open plan reception/kitchen/dining area with engineered oak flooring and underfloor heating. The reception area to the front boasts an attractive bay with bespoke shutters, beautiful ornate feature fireplace with tiled insert, and wonderful space for relaxing and entertaining, with a further area ideal for dining.",
+                </p> 
+                <!-- Add to and Remove from - Favourite Buttons -->
+                <div id=prop3>
+                    <button class='addFav'>Add to Favourites</button>
+                    <button class='removeFav'>Remove from Favourites</button>  
+                </div>
+            </div>
+                <!-- Image Carousel created using Bootstrap -->
+            <div class="slider">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-indicators navigation-manual">
+                        <label style="margin-right: 10px;" data-target="#carouselExampleIndicators" data-slide-to="0" class="active manual-btn"><img class="manual-img" style="height:60px; width:80px;" src="../images/property3/prop3pic1.jpg" alt=""></label>
+                        <label data-target="#carouselExampleIndicators" data-slide-to="1" for="radio1" class="manual-btn"><img class="manual-img" style="height:60px; width:80px;" src="../images/property3/prop3pic2.jpg" alt=""></label>
+                        <label data-target="#carouselExampleIndicators" data-slide-to="2" for="radio2" class="manual-btn"><img class="manual-img" style="height:60px; width:80px;" src="../images/property3/prop3pic3.jpg" alt=""></label>
+                        <label data-target="#carouselExampleIndicators" data-slide-to="3" for="radio3" class="manual-btn"><img class="manual-img" style="height:60px; width:80px;" src="../images/property3/prop3pic4.jpg" alt=""></label>
+                        <label data-target="#carouselExampleIndicators" data-slide-to="4" for="radio4" class="manual-btn"><img class="manual-img" style="height:60px; width:80px;" src="../images/property3/prop3pic5.jpg" alt=""></label>
+                        <label data-target="#carouselExampleIndicators" data-slide-to="5" for="radio5" class="manual-btn"><img class="manual-img" style="height:60px; width:80px;" src="../images/property3/prop3pic6.jpg" alt=""></label>
+                        <label data-target="#carouselExampleIndicators" data-slide-to="6" for="radio6" class="manual-btn"><img class="manual-img" style="height:60px; width:80px;" src="../images/property3/prop3pic7.jpg" alt=""></label>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="../images/property3/prop3pic1.jpg" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="../images/property3/prop3pic2.jpg" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="../images/property3/prop3pic3.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="../images/property3/prop3pic4.jpg" alt="Fourth slide">
+                        </div>                    
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="../images/property3/prop3pic5.jpg" alt="Fifth slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="../images/property3/prop3pic6.jpg" alt="Sixth slide">
+                        </div>                    
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="../images/property3/prop3pic7.jpg" alt="Seventh slide">
+                        </div>                    
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Jquery Tabs containing property long description, floorplan and map of the location -->
+            <div id="tabs">
+                <ul>
+                  <li><a href="#tabs-1">Property Description</a></li>
+                  <li><a href="#tabs-2">Floor Plan</a></li>
+                  <li><a href="#tabs-3">View Map</a></li>
+                </ul>
+                <div id="tabs-1">
+                    <p>
+                        Beautifully maintained and appointed by the current owners, the property offers superb, spacious accommodation with heaps of period elegance complimented by stylish interiors and high-quality finish. Accommodation comprises, entrance on the ground floor into a hallway with stairs rising to the first floor, and descending to the lower level. The lower ground floor offers a superb flowing open plan reception/kitchen/dining area with engineered oak flooring and underfloor heating. The reception area to the front boasts an attractive bay with bespoke shutters, beautiful ornate feature fireplace with tiled insert, and wonderful space for relaxing and entertaining, with a further area ideal for dining.",
+                    </p>                 
+                </div>
+                <div id="tabs-2">
+                    <img src="../images/property3/prop3floorplan.jpg" style="width:500px">
+                </div>
+                <div id="tabs-3">
+                    <!-- Embedded location of property from google maps -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2484.5136901938395!2d0.015158715422108867!3d51.48544022013013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a83a28ebe0ed%3A0xc5dc1ff821354f8c!2sCombedale%20Rd%2C%20Greenwich%20Peninsula%2C%20London%2C%20UK!5e0!3m2!1sen!2slk!4v1608887532086!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+        </div>
+        <!-- Footer section -->
+        <div class='footer' id='footer'>
+            <h2>settle.</h2>
+            <p>Univesity of Westminster <br>
+            Head Office: +44 12 3456 7890</p>
+        </div>
+    </body>
+</html>
+<!-- End of HTML file -->

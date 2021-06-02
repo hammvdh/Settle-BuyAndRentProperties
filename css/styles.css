@@ -1,0 +1,461 @@
+
+/*=====================================================
+Overall Site CSS
+=====================================================*/
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+html,body{
+    display:block;
+    background-color: rgb(231, 231, 231);
+    height:100%;
+    scroll-behavior: smooth;
+
+} 
+
+/*=====================================================
+NAVIGATION BAR
+=====================================================*/
+
+header{
+    display: flex;
+    justify-content:flex-end;
+    align-items:center;
+    padding:20px 3%;
+    color:rgb(243, 243, 243);
+    background-color: rgb(19, 99, 248);
+}
+
+.logo{
+    cursor:pointer;
+    margin-right: auto; 
+    font-size: 20px;
+}
+.nav-bar a{
+    text-decoration: none;
+    color:rgb(32, 32, 32);
+}
+
+.nav-bar a.current{
+    color:rgb(255, 255, 255);
+}
+
+.nav-bar li{
+    display: inline-block;
+    padding:0px 20px;
+    
+}
+
+/*=====================================================
+HOME PAGE 
+=====================================================*/
+
+.home-container h1{
+    color:white;
+    text-align: center;
+    padding-top: 200px;
+    font-size: 60px;
+}
+
+.home-container p{
+    color:white;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 20px;
+}
+
+.home-button button{
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin-top:100px;
+    border:none;
+    border-radius: 3px;
+    padding:10px 20px;
+    background-color:rgb(20, 118, 230);
+}
+
+.home-container a{
+    text-decoration: none;
+    color:white;
+    
+}
+
+.home-container{
+    background-image: url('../images/mainbg.jpg');
+    box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.8);
+    background-size: 100%;
+    background-color: white;
+    height:100%;
+}
+
+/*=====================================================
+PROPERTIES PAGE
+=====================================================*/
+
+#Placeholder{
+    display: flex;
+    flex-wrap: wrap;
+    margin:auto;
+    margin-left:45px;
+    margin-bottom: 50px;
+}
+
+.flex-results{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.property{
+    width:400px;
+    height:600px;
+    box-shadow: 5px 5px 11px rgb(158, 158, 158);
+    justify-content: center;
+}
+
+#results h1{
+    font-weight: 300;
+    text-align: center;
+    font-size: 15px;
+    padding:20px;
+    color:rgb(83, 83, 83);
+}
+
+#Placeholder .property{
+    background-color: rgb(255, 255, 255);
+    transition: transform .3s; /* Animation */
+    font-size: 14px;
+    margin:10px 10px;
+    border-radius:10px;
+}
+
+#Placeholder .property:hover{
+    transform: scale(1.02);
+}
+
+.thumbnailImages img:hover{
+    transform: scale(4);
+    margin-left:150px;
+    margin-right:150px;
+    margin-bottom: 60px;
+}
+
+.property-description{
+    font-size: 16px;
+    text-justify: auto;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.property-image{
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+    border-radius:8px;
+}
+
+
+
+.property strong{
+    color:rgb(87, 87, 87);
+}
+
+.prop-location{
+    margin: 0px 20px;
+    font-size: 18px;
+}
+
+.prop-price{
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-top: 8px;
+    padding:0px 10px;
+    padding-top: 5px;
+    color:rgb(20, 118, 230);
+}
+
+.prop-type{
+    margin-left: 10px;
+    padding:10px;
+    font-size: 18px;
+}
+
+.view-prop{
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 20px;
+    margin-left: 20px;
+    position:absolute;
+    padding: 10px;
+    border:none;
+    border-radius: 3px;
+    background-color: rgb(19, 99, 248);
+    cursor: pointer;
+}
+
+.view-prop a{
+    text-decoration: none;
+    color:white;
+}
+
+#clearButton{
+    margin:auto;
+   }
+   
+#clearButton Button{
+
+    border:none;
+    margin-left:613px;
+    border-radius: 3px;
+    padding:10px 20px;
+    margin-top: -30px;
+    color:white;
+    background-color:rgb(20, 118, 230);
+}
+
+li .viewFavourites{
+    font-weight: 300;
+    font-size: 14px;
+    border:none;
+    border-radius: 3px;
+    padding:10px 20px;
+    color:white;
+    background: rgb(0,1,1);
+    background: linear-gradient(90deg, rgba(0,1,1,1) 0%, rgba(31,31,31,1) 44%, rgba(24,24,24,1) 74%, rgba(0,0,0,1) 100%);
+    cursor: pointer;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+/*==================SEARCH SECTION===================*/
+
+.ui-spinner-input{
+    width:150px;
+}
+
+.search-container{
+    display:flex;
+    flex-wrap: wrap;
+    padding:50px;
+    background: rgb(0,1,1);
+    background: linear-gradient(90deg, rgba(0,1,1,1) 0%, rgba(31,31,31,1) 24%, rgba(24,24,24,1) 74%, rgba(0,0,0,1) 100%);
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.search-container div{
+    margin:auto;
+}
+
+.search-container div:not(#priceSlider) {
+    margin-right: 50px;
+    padding-top: 20px;
+	color:white;
+}
+
+.search-container #priceSlider{
+	margin-left: 10px;
+    padding-top: 20px;
+    margin-top: 5px;
+}
+
+.search-container div input{
+    padding:8px;
+	padding-right:0px;
+    border-radius:5px;
+}
+
+input#price.sliderText{
+    padding-right: 77px;
+}
+
+#priceRange{
+	padding-top: 50px;
+}
+
+.search-container div h3{
+    
+    font-weight: 300;
+    padding-bottom:8px;
+}
+
+.search-container div select{
+    padding:100px;
+    border-radius:5px;
+}
+
+.search-container #searchBtn{
+	margin-top: 10px;
+	margin:auto;
+    border:none;
+    border-radius: 3px;
+    padding:10px 40px;
+    cursor: pointer;
+}
+
+/*=====================================================
+PROPERTY PAGE
+=====================================================*/
+
+.prop-page-desc{
+    margin: 20px 0px;
+    
+}
+
+.prop-page-desc h2{
+    margin-top: 6px;
+    font-size: 18px;
+}
+
+.desc h1{
+color:rgb(77, 77, 77);
+}
+
+.desc p{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    margin: 20px 0px;
+    max-width: 600px;
+    text-align: justify;
+}
+
+.desc{
+    position: absolute;
+    padding: 50px;
+    margin-left: 700px;
+}
+
+.desc button{
+    cursor: pointer;
+    color: white;
+    margin-right: 10px;
+    border:none;
+    border-radius: 3px;
+    padding:10px 20px;
+    background-color:rgb(20, 118, 230);
+}
+
+#tabs{
+    margin:auto;
+    margin: 50px;
+}
+
+/*==================== BOOTSTRAP IMAGE CAROUSEL==================*/
+.slide{
+    width: 680px;
+    transition: 2s;
+    padding: 50px 0 50px 50px;
+}
+
+.slide .carousel-inner img{
+    width: 630px;
+    height: 411px;
+}
+
+.carousel-indicators {
+    margin-left: 8% ;
+    margin-right: 0;
+    margin-top: 2% ;
+}
+
+.carousel-inner {
+    margin-bottom: 25px ;
+}
+
+/* manual slide */
+
+.navigation-manual{
+    position: absolute;
+    width: 620px;
+    margin-top: auto;
+    display: flex;
+    justify-content: left;
+}
+
+.manual-btn{
+    padding: 2px;
+    height:  46px;
+    width: 80px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-img {
+    transition: 0.2s ease;
+}
+
+.manual-img:hover {
+    transform: scale(1.1);
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 10px;
+}
+
+/* auto slide */
+
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.navigation-auto div {
+    margin-top: 50px;
+    padding: 5px;
+    border-radius: 5px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+.carousel-control-prev-icon {
+    margin-left: 80px;
+}
+
+/*=====================================================
+FOOTER SECTION
+=====================================================*/
+
+.footer{
+    width: 100%;
+    height: 250px;
+    background-color: rgb(14, 14, 14);
+}
+
+.footer h2{
+    font-size: 60px;
+    color:white;
+    padding:40px ;
+}
+
+.footer p{
+    font-size: 17px;
+    color:white;
+    padding-left:40px ;
+}

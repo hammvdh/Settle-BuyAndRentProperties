@@ -1,0 +1,272 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+
+    <!-- Title of website -->
+    <title>Settle - Buy and Rent Properties</title>
+    <!-- CSS File -->
+    <link rel="stylesheet" href="css/styles.css">	
+    <!-- Linking the Jquery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Local JS files -->
+    <script src="searchFilter.js"></script>
+    <script src="favouriteFilter.js"></script>
+    <!-- Importing and linking local Jquery UI files -->
+    <script src="jquery-ui.js"></script>
+    <link href="jquery-ui.css" rel="stylesheet">
+    <link href="jquery-ui.theme.css" rel="stylesheet">
+    <!-- Linking Fonts from Google -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation Bar to navigate across the site-->
+    <header class="nav-bar">
+        <div class="logo">
+             <!-- Logo / Name of Website -->
+            <h2>settle.</h2> 
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home-page.html">Home</a></li>
+                <li><a class="current" href="properties.html">Properties</a></li>
+                <li><a href="#footer">Contact</a></li>
+                <li><button class="viewFavourites">View Favourites</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Search Container containing JqueryUI elements used to filter and search for properties -->
+    <div class="search-container">
+        <!-- Div tags to take user input for search filtering -->
+        <div>
+            <h3>Min Bedrooms:</h3>
+            <input id="minBed" value="1">
+        </div>
+
+        <div>
+            <h3>Max Bedrooms:</h3>
+            <input id="maxBed" value="4">
+        </div>
+
+        <div>
+            <h3>Property type:</h3>
+            <select name="property" id="property">
+                <option value="House">House</option>
+                <option value="Flat">Flat</option>
+                <option value="Any" selected>Any</option>
+            </select>
+        </div>
+        
+        <div>
+            <h3>Date Added</h3>
+            <select name="time" id="time">
+                <option value="Any Date" selected>Anytime</option>
+                
+                <optgroup label="January - April 2020">
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                </optgroup>
+
+                <optgroup label="May - August 2020">
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                </optgroup>
+
+                <optgroup label="September - December 2020">
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </optgroup>
+                
+            </select>
+        </div>
+      
+        <div id="priceRange">
+            <h3>Price Range</h3>
+            <input type="text" id="price" readonly class="sliderText">
+            <div id="priceSlider"></div>
+        </div>
+
+        <div class="break"></div>
+        <button id="searchBtn">Search</button> <!-- Search button which onClick will search for the properties -->
+
+    </div>
+
+    <div id="clearButton"></div>
+    <div id="results"></div>
+    <div id="Placeholder"></div>
+    <div class='footer' id='footer'>
+        <h2>settle.</h2>
+        <p>Univesity of Westminster <br>
+        Head Office: +44 12 3456 7890</p>
+    </div>
+    <script>
+        // Data array containing available properties to be used across the website
+        var data = {
+            "properties": [
+                {
+                    "id":"prop1",
+                    "type":"House",
+                    "bedrooms":3,
+                    "price":650000,
+                    "tenure":"Freehold",
+                    "shortDescription":"Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland.",
+                    "longDescription":"Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
+                    "location":"Petts Wood Road, Petts Wood, Orpington",
+                    "picture":"images/property1/prop1pic1.jpg",
+                    "url":"properties/prop1.html",
+                    "added": {
+                        "month":"March",
+                        "day":12,
+                        "year":2020
+                    }
+                },
+                {
+                    "id":"prop2",
+                    "type":"Flat",
+                    "bedrooms":2,
+                    "price":299995,
+                    "tenure":"Freehold",
+                    "shortDescription":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine.",
+                    "longDescription":"Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
+                    "location":"Crofton Road Orpington BR6",
+                    "picture":"images/property2/prop2pic1.jpg",
+                    "url":"properties/prop2.html",
+                    "added": {
+                        "month":"Feburary",
+                        "day":14,
+                        "year":2020
+                    }
+                },
+                {
+                    "id":"prop3",
+                    "type":"House",
+                    "bedrooms":3,
+                    "price":700000,
+                    "tenure":"Freehold",
+                    "shortDescription":"Beautifully maintained and appointed by the current owners, the property offers superb, spacious accommodation with heaps of period elegance complimented by stylish interiors and high-quality finish.",
+                    "longDescription":"Beautifully maintained and appointed by the current owners, the property offers superb, spacious accommodation with heaps of period elegance complimented by stylish interiors and high-quality finish. Accommodation comprises, entrance on the ground floor into a hallway with stairs rising to the first floor, and descending to the lower level. The lower ground floor offers a superb flowing open plan reception/kitchen/dining area with engineered oak flooring and underfloor heating. The reception area to the front boasts an attractive bay with bespoke shutters, beautiful ornate feature fireplace with tiled insert, and wonderful space for relaxing and entertaining, with a further area ideal for dining.",
+                    "location":"Combedale Road, Greenwich, London, SE10",
+                    "picture":"images/property3/prop3pic1.jpg",
+                    "url":"properties/prop3.html",
+                    "added": {
+                        "month":"December",
+                        "day":12,
+                        "year":2020
+                    }
+                },
+                {
+                    "id":"prop4",
+                    "type":"House",
+                    "bedrooms":3,
+                    "price":900000,
+                    "tenure":"Freehold",
+                    "shortDescription":"Beyond the smart, charcoal grey door, the front entrance reveals an impressive hallway with tall ceilings and handy under-stair cupboard",
+                    "longDescription":"Beyond the smart, charcoal grey door, the front entrance reveals an impressive hallway with tall ceilings and handy under-stair cupboard. Awash with natural light, the double reception boasts a floating picture ledge and contemporary matte grey painted walls. This versatile double space can easily be utilised for a children’s playroom or spacious home office, for example. Brilliant white cabinets draw the eye upon entrance to the kitchen, boasting a welcoming generosity of storage space and a beautifully integrated range of appliances. Housed within a conservatory-style extension, the additional dining room sports French doors opening onto the timber-decked rear garden. A navy blue painted wall features in the stairway, with the first double bedroom greeting you on the landing. Ascending a few short steps further takes you to the single bedroom and monochrome-style bathroom, hosting a full-sized bathtub, large stainless steel heated towel rail and space for shelving. The master bedroom resides adjacent, boasting a glorious floor-to-ceiling inbuilt wardrobe, further inbuilt floating shelves and two enviably large double glazed windows.",
+                    "location":"Hatley Road, Finsbury Park",
+                    "picture":"images/property4/prop4pic1.jpg",
+                    "url":"properties/prop4.html",
+                    "added": {
+                        "month":"July",
+                        "day":06,
+                        "year":2020
+                    }
+                },
+                {
+                    "id":"prop5",
+                    "type":"Flat",
+                    "bedrooms":1,
+                    "price":500000,
+                    "tenure":"Freehold",
+                    "shortDescription":"This charming apartment comprises entrance area, generous reception room with study area, dining area and feature Georgian windows, semi open plan fitted kitchen with work tops and integrated appliances",
+                    "longDescription":"This charming apartment comprises entrance area, generous reception room with study area, dining area and feature Georgian windows, semi open plan fitted kitchen with work tops and integrated appliances, inner hallway providing access to double bedroom with en-suite bathroom and separate WC. The apartment has the benefit of a cellar storage room together with use of an attractive terrace area and communal gardens. Viewing is highly recommended in order to appreciate the historic tranquil yet central location. London Bridge, Borough Market and Bankside are all moments away.",
+                    "location":"Trinity Church Square, London",
+                    "picture":"images/property5/prop5pic1.jpg",
+                    "url":"properties/prop5.html",
+                    "added": {
+                        "month":"Feburary",
+                        "day":15,
+                        "year":2020
+                    }
+                },
+                {
+                    "id":"prop6",
+                    "type":"Flat",
+                    "bedrooms":1,
+                    "price":475000,
+                    "tenure":"Freehold",
+                    "shortDescription":"Located along Regency Street in leafy Westminster, this one bedroom apartment has a contemporary finish. The open plan layout has room for dining and incorporates a fully fitted kitchen.",
+                    "longDescription":"Located along Regency Street in leafy Westminster, this one bedroom apartment has a contemporary finish. The open plan layout has room for dining and incorporates a fully fitted kitchen. The bedroom benefits from storage cupboards whilst the bathroom has a white suite and it fully tiled for ease of maintenance.",
+                    "location":"Regency Street, SW1P",
+                    "picture":"images/property6/prop6pic1.jpg",
+                    "url":"properties/prop6.html",
+                    "added": {
+                        "month":"September",
+                        "day":14,
+                        "year":2020
+                    }
+                },
+                {
+                    "id":"prop7",
+                    "type":"House",
+                    "bedrooms":4,
+                    "price":350000,
+                    "tenure":"Freehold",
+                    "shortDescription":"This spacious and well presented family home comprises of entrance hallway, open plan lounge-dining room, quality fitted kitchen",
+                    "longDescription":"This spacious and well presented family home comprises of entrance hallway, open plan lounge-dining room, quality fitted kitchen, downstairs cloakroom, conservatory and side entrance porch.To the first floor you will find three double bedrooms, a single bedroom and modern family shower room suite. Externally the generous rear garden is lawned with raised bedding borders with some mature plants, flowers and trees, patio seating area and garden shed. To the side is a private patio paved courtyard with gated door to the front of the property, The front of the home has been designed for ease of maintenance and provides ample off road parking on the driveway and access to the garage.",
+                    "location":"Glebe Close, Wigston, LE18 3LU",
+                    "picture":"images/property7/prop7pic1.jpg",
+                    "url":"properties/prop7.html",
+                    "added": {
+                        "month":"January",
+                        "day":03,
+                        "year":2020
+                    }
+                }
+            ]  
+        }
+        
+        // Using Javascript Literals to display number of properties available
+        document.getElementById("results").innerHTML=`
+        <h1> Properties Available ( ${data.properties.length} results ) <h1>
+        ` 
+        //creating variable output
+        var output="";
+        for (var i in data.properties) {
+            //For loop to go through the array and print out the property data
+            output+=
+            "<div class='property'><img class='property-image' src=" + data.properties[i].picture + ">" + 
+            "<h2 class='prop-price'>" +
+                "<strong>Price:</strong> £" + data.properties[i].price +
+            "</h2>"+
+            "<h2 class='prop-type'><strong> Property type:</strong> " + data.properties[i].type +"</h2>"
+            +
+            "<h2 class = 'prop-location'><strong> Location: </strong>"+ data.properties[i].location +"</h2>" + 
+            "<p class='property-description'>" + data.properties[i].shortDescription + "</p>" + 
+            "<button class='view-prop'>"+
+                "<a href='" + data.properties[i].url + "'><h4>View Property</h4></a>"+
+            "</button></div>";		
+        }
+        // adding the output to placeholder divtag
+        document.getElementById( "Placeholder" ).innerHTML = output;
+
+    </script>
+
+</body>
+
+</html>
+
+<!-- End of HTML file -->
